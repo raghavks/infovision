@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
-			<link rel="stylesheet" href="/static/css/custom.css">
-				<script src="/static/js/zingchart.min.js"></script>
-				
-				<!-- jQuery library -->
-				<script src="/static/js/jquery.min.js"></script>
-				
-				<!-- Popper JS -->
-				<!--<script src="static/js/popper.min.js"></script>-->
-				<!-- Latest compiled JavaScript -->
-				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-				<meta charset="UTF-8">
-					<title>InfoVision</title>
-				</head>
-				<body bgcolor="#F7F8F7">
-					<!--<div class="row" style="height: 10vh;">-->
-					<div class="container-fluid" id="header" style="height: 10vh;">
-						<div class="col-md-12" >
-							<div class="row" style="background-color:#FFFFFF;border-bottom: 2px solid #1F282F;">
-								<div class="col-md-6 header_row" >
-									<img src="/static/images/logo.png" width="160" height="55" class="inspired-logo" alt="InfoVision" />
-								</div>
-								<div class="col-md-6 header_row">
-									<table>
-										<th>
-										<td class="font-weight-bold menu-list"><a href="/">Home</a></td>
-										<td class="font-weight-bold menu-list"><a href="/recentvisitors">Resent Visitors</a></td>
-											<td class="font-weight-bold menu-list"><a href="/freesearch">Free Search</a></td>
-											<td class="font-weight-bold menu-list"><a href="/topvisitors">Top 10 Visitors</a></td>
-										</th>
-									</table>
-								</div>
-							</div>
-							<!--<div class="row" id="content" style="height: 80vh;">-->
-                            {% block body %}{% endblock %}
-							<!--</div>-->
-							<div class="row" id="footer" style="height: 10vh; background-color:#1F282F;">
-								<div class="col-md-12 container">
-									<p class="text-center menu-list" style="color:#6F6F6F;" >2018 © Copyright InfoVision. All rights Reserved.
-
-                                    </p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</body>
-			</html>
-
-
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/static/css/custom.css">
+      <script src="/static/js/zingchart.min.js"></script>
+      <!-- jQuery library -->
+      <script src="/static/js/jquery.min.js"></script>
+      <!-- Popper JS -->
+      <!--<script src="static/js/popper.min.js"></script>-->
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <meta charset="UTF-8">
+      <title>InfoVision</title>
+   </head>
+   <body bgcolor="#F7F8F7">
+      <!--<div class="row" style="height: 10vh;">-->
+      <div class="container-fluid" id="header" style="height: 10vh;">
+         <div class="col-md-12" >
+            <div class="row" style="background-color:#FFFFFF;border-bottom: 2px solid #1F282F;">
+               <div class="col-md-6 header_row" >
+                  <img src="/static/images/logo.png" width="160" height="55" class="inspired-logo" alt="InfoVision" />
+               </div>
+               <div class="col-md-6 header_row">
+                  <table>
+                     <th>
+                     <td class="font-weight-bold menu-list"><a href="/">Home</a></td>
+                     <td class="font-weight-bold menu-list"><a href="/recentvisitors">Resent Visitors</a></td>
+                     <td class="font-weight-bold menu-list"><a href="/freesearch">Free Search</a></td>
+                     <td class="font-weight-bold menu-list"><a href="/topvisitors">Top 10 Visitors</a></td>
+                     </th>
+                  </table>
+               </div>
+            </div>
+            <!--<div class="row" id="content" style="height: 80vh;">-->
+            {% block body %}{% endblock %}
+            <!--</div>-->
+            <div class="row" id="footer" style="height: 10vh; background-color:#1F282F;">
+               <div class="col-md-12 container">
+                  <p class="text-center menu-list" style="color:#6F6F6F;" >2018 © Copyright InfoVision. All rights Reserved.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
