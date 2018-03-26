@@ -1,0 +1,173 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<div class="row" id="content" >
+<style type="text/css">
+
+dialog {
+    width: 500px;
+    background:#e8e8e8;
+    border: 1px solid #dadada;
+    font-family:sans-serif;
+    padding: 5px 10px 20px 20px;
+}
+
+
+.ibox-content {
+    background-color: #FFFFFF;
+    color: inherit;
+    padding: 5px 10px 10px 10px;
+    border-color: #E7EAEC;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0px;
+}
+
+.search-form {
+    margin-top: 5px;
+}
+
+.search-result h4 {
+    margin-bottom: 0;
+    color: #1E0FBE;
+}
+
+.search-result .search-link {
+    color: #006621;
+}
+
+.search-result p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.hr-line-dashed {
+    border-top: 1px dashed #E7EAEC;
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 1px;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.bs-example {
+	font-family: sans-serif;
+	position: relative;
+	margin: 100px;
+}
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 22px; /* Set input font size */
+	height: 30px;
+	line-height: 30px;
+	outline: medium none;
+	padding: 8px 12px;
+	width: 396px;
+}
+.typeahead {
+	background-color: #FFFFFF;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+	width: 422px;
+}
+.tt-suggestion {
+	font-size: 22px;  /* Set suggestion dropdown font size */
+	padding: 3px 20px;
+}
+.tt-suggestion:hover {
+	cursor: pointer;
+	background-color: #0097CF;
+	color: #FFFFFF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+
+
+</style>
+
+    <div class="container bootstrap snippet">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <h2>
+                            Top 10 Visitors
+                        </h2>
+                        <small>Request time  (0.23 seconds)</small>
+						<div id="data-section" >
+                        
+                            {% for record in data %}
+                                <div class="search-result">
+                                    <h4>
+                                   
+                                        		<a href="/company-data?id={{record.id}}" target="_blank" id="show" class="search-link">{{ record.company_name }}</a>
+
+                                    </h4>
+                                    <a>{{ record.website }}</a>
+                                    <p>﻿{{ record.description }}</p>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                            {% endfor %}
+                            
+                            
+                            
+						</div>
+                        
+                      
+                        
+                        <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4>Header</h4>
+            </div>
+            <div class="modal-body">
+                Modal Content
+            </div>
+        </div>
+    </div>
+</div>
+                        <!--<div class="text-center">-->
+                            <!--<div class="btn-group">-->
+                                <!--<button class="btn btn-white" type="button"><i class="glyphicon glyphicon-chevron-left"></i></button>-->
+                                <!--<button class="btn btn-white">1</button>-->
+                                <!--<button class="btn btn-white  active">2</button>-->
+                                <!--<button class="btn btn-white">3</button>-->
+                                <!--<button class="btn btn-white">4</button>-->
+                                <!--<button class="btn btn-white">5</button>-->
+                                <!--<button class="btn btn-white">6</button>-->
+                                <!--<button class="btn btn-white">7</button>-->
+                                <!--<button class="btn btn-white" type="button"><i class="glyphicon glyphicon-chevron-right"></i> </button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/static/js/bootstrap.min.js"></script>
+</div>
+{% endblock %}

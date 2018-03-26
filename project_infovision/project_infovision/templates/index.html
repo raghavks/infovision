@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row" id="content" style="height: 80vh;">
+<script type="text/javascript">
+   $(document).ready(function(){
+       $("button[type='button']").click(function(){
+           var radioValue = $("input[name='optradio']:checked").val();
+           if(radioValue==1){
+               	 $.ajax({
+							type:"GET",
+							url: "/recentvisitors/",
+							success: function(htmlresponsedata){
+								$('body').html(htmlresponsedata);
+							}
+						 });
+   				}
+   			
+   			if(radioValue==2){
+               	 $.ajax({
+							type:"GET",
+							url: "/freesearch/",
+							success: function(htmlresponsedata){
+								$('body').html(htmlresponsedata);
+							}
+						 });
+						 console.log("raghavendra")
+   				}
+   			
+            if (radioValue == 3){
+               $.ajax({
+               type:"GET",
+                    url: "/topvisitors/",
+                         success: function(htmlresponsedata)
+               {
+               $('body').html(htmlresponsedata);
+               }
+               });
+               console.log("raghavendra")
+               }
+
+   			
+   			
+       		}
+       		);
+   
+   });
+</script>
+<br>
+<div id="data-block">
+   <div class="col-md-12 container">
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-8">
+            <!--<p>JSON.parse({{json_data}});</p>-->
+            <div id="myChart" style="height: 40vh;"></div>
+            <script type="text/javascript">
+               var myConfig = {
+                 "graphset": [{
+                   "type": "wordcloud",
+                   "options": {
+                     "style": {
+                       "tooltip": {
+                         visible: true,
+                         text: '%text: %hits'
+                       }
+                     },
+                     "words":{{json_data|safe}},
+                   }
+                 }]
+               };
+               
+               zingchart.render({
+                 id: 'myChart',
+                 data: myConfig,
+                 height: '100%',
+                 width: '100%'
+               });
+            </script>
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-8 ">
+            <form >
+               <br>
+               <table class="table text-center">
+                  <br>
+                  <th class="text-center">
+                     <div class="radio">
+                        <label>
+                        <input type="radio" name="optradio" value="1" checked="checked">Recent Visitors
+                        </label>
+                     </div>
+                  </th>
+                  <td></td>
+                  <th class="text-center">
+                     <div class="radio">
+                        <label>
+                        <input type="radio" name="optradio" value="2">Free Search
+                        </label>
+                     </div>
+                  </th>
+                  <td></td>
+                  <th class="text-center">
+                     <div class="radio">
+                        <label>
+                        <input type="radio" name="optradio" value="3">Top 10 Visitors
+                        </label>
+                     </div>
+                  </th>
+                  </tr>
+               </table>
+            </form>
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-8 text-center">
+            <button type="button" class="btn btn-info ">Submit</button>
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+   </div>
+</div>
+</div>
+{% endblock %}

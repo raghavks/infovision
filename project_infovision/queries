@@ -1,0 +1,25 @@
+﻿﻿mr = db.runCommand({
+  "mapreduce" : "discoverorgdata",
+  "map" : function() {
+    for (var key in this) { emit(key, null); }
+  },
+  "reduce" : function(key, stuff) { return null; },
+  "out": "discoverorgdata" + "_keys"
+})
+
+db[mr.result].distinct("_id")
+
+
+
+﻿/* 1 */
+[
+    "_id",
+    "address",
+    "company_details",
+    "company_name",
+    "description",
+    "employee_details",
+    "phone",
+    "url",
+    "website"
+]

@@ -1,0 +1,28 @@
+.header_row{
+
+padding: 5px 0px 10px 100px;/*top right bottom left*/
+
+}
+.menu-list{
+    padding: 25px 25px 0px 25px;
+}
+center_matching {
+  text-align:center;
+  vertical-align: middle;
+ }
+.container-fluid {
+     padding-left: 0px;
+     padding-right: 0px;
+     padding-right: 0px;
+}
+
+
+#myChart {
+      height: 100%;
+      width: 100%;
+      min-height: 150px;
+    }
+
+    .zc-ref {
+      display: none;
+    }

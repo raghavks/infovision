@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row" id="content" style="height: 80vh;">
+<style type="text/css">
+
+
+.ibox-content {
+    background-color: #FFFFFF;
+    color: inherit;
+    
+    border-color: #E7EAEC;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0px;
+}
+
+.search-form {
+    margin-top: 5px;
+}
+
+.search-result h4 {
+    margin-bottom: 0;
+    color: #1E0FBE;
+}
+
+.search-result .search-link {
+    color: #006621;
+}
+
+.search-result p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.hr-line-dashed {
+    border-top: 1px dashed #E7EAEC;
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 1px;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+
+</style>
+<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+    <div class="container bootstrap snippet">
+        </br>
+		<div class="row">
+            <!--<div class="col-lg-1">-->
+            <!---->
+            <!--</div>-->
+		<!---->
+			</br>
+			<div class="col-lg-8" style="border-style: outset;">
+    
+				<div class="row" >
+					<div class="col-lg-12" style="{border-style: inset;}">
+				<h1>{{ record.company_name }}</h1>
+						<h6><span>  </span>	<span class="fa fa-industry">	﻿{{ record.company_details.Industry }}	</span><span>		</span><span class="fa fa-group"> Employees:{{ record.company_details.Employees }}</span><span>		</span><span class="fa fa-money"> ﻿Revenue:{{ record.company_details.Revenue }}</span></h6>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row">
+					<div class="col-lg-12">
+						<h4>About Us.</h4>
+						<br>
+						<p align="justify">﻿{{ record.description}}</p>
+					</div>
+				</div>
+				<div class="row">
+            <div class="col-lg-6">
+				<h4>Company Details</h4>
+				
+				<h5><i class="fa fa-firefox"><span> website</span></i></h5>
+				<a href="{{ record.website}}" target="_blank">﻿{{ record.website}}</a>
+				
+				
+            </div>
+			<div class="col-lg-6">
+				</br>
+            <h5 class="fa fa-mobile"><span> Phone No</span></h5>
+				<p>{{ record.phone}}</p>
+				<h6 class="fa fa-address-card" ><span> Address</span></h6>
+				<address>{{ record.address}}</address>
+            </div>
+            </div>
+			<div class="col-lg-3">
+            
+            </div>
+			
+        </div>
+			
+			 <div class="col-lg-4 " >
+				 <div class="row">
+					 <div class="col-lg-5"></div>
+				 <div class="col-lg-2">
+					 <i class="glyphicon glyphicon-user img-circle" style="font-size:48px;color:#a0ddef"></i>
+				 </div>
+				 <div class="col-lg-5"></div>
+				 </div>
+				 </br>
+				 <div class="row">
+				  <div class="col-lg-12 pre-scrollable" >
+					  {% for people in record.employee_details %}
+				 <table class="table table-bordered">
+					  
+					 
+						
+						
+						  <tr>
+							  <td><b>Name :</b></td> <td>{{ people.employee_name }}</td>
+						  </tr>
+						<tr>			<td><b>Designation :</b></td> <td>{{ people.employee_designation }}</td>
+						
+						
+						</tr>
+						<tr><td><b>Email :</b></td> <td>{{ people.employee_mail }}</td></tr>
+						<tr>
+							<td><b>Contact No. :</b></td> <td>{{ people.employee_phone }}</td>
+						</tr>
+						
+					 
+				</table>
+				 {% endfor %}
+				  </div>
+				 </div>
+				 
+				 
+            
+            </div>
+        </div>
+		
+    </div>
+
+
+
+</div>
+<script src="/static/js/bootstrap.min.js"></script>
+{% endblock %}
