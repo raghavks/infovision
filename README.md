@@ -1,4 +1,6 @@
 StudentRank.java
+----------------
+
 public class StudentRank {
     private String[] students;
     private int[] ranks;
